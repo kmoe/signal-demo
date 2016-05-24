@@ -1,3 +1,4 @@
+'use strict';
 const SerialPort = require('serialport').SerialPort;
 const pn532 = require('pn532');
 const ndef = require('ndef');
@@ -19,25 +20,6 @@ nfc.on('ready', () => {
       var records = ndef.decodeMessage(Array.from(data));
       console.log(records);
     });
-
-    // nfc.readBlock().then((data) => {
-    //   console.log(data);
-    //   const records = ndef.decodeMessage([data]);
-    //   console.log(records);
-    //   console.log(ndef.text.decodePayload(data.toString()));
-    // });
-
-    // nfc.readNdefData().then((data) => {
-    //   console.log(data);
-    //   // const records = ndef.decodeMessage([data.toString()]);
-    //   // console.log('records');
-    //   // console.log(records);
-    //   // const payload = ndef.text.decodePayload(records[0].payload);
-    //   // console.log('payload');
-    //   console.log(ndef.text.decodePayload(data.toString()));
-    //   // console.log(payload);
-    //   // console.log(ndef.text.decodePayload(data));
-    // });
   });
 });
 

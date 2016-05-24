@@ -12,13 +12,12 @@ nfc.on('ready', () => {
 
   nfc.on('tag', (tag) => {
     console.log('tag found');
-    console.log(tag);
     console.log(`tag UUID : ${tag.uid}`);
 
     request('https://kmoe.herokuapp.com/nfc', (error, response, body) => {
-      console.log(body);
       const messageToWrite = '' + body;
-      
+      console.log(`preparing to write ${messageToWrite}`);
+
       var messages = [
         ndef.uriRecord('https://www.twilio.com/signal'),
         ndef.textRecord(messageToWrite)
@@ -27,11 +26,9 @@ nfc.on('ready', () => {
 
       console.log('writing data');
       nfc.writeNdefData(data).then(function(response) {
-        console.log('Write successful');
+        console.log('write successful');
       });
     });
-
-
   });
 });
 
