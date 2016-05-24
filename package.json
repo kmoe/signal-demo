@@ -1,0 +1,25 @@
+{
+  "name": "signal-demo",
+  "version": "1.0.0",
+  "description": "demo for the APIs for Cyborgs talk presented at Signal on 24th May 2016",
+  "main": "index.js",
+  "scripts": {
+    "test": "nope"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kmoe/signal-demo.git"
+  },
+  "author": "Katy Moe <katy@katy.moe> (http://katy.moe)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kmoe/signal-demo/issues"
+  },
+  "homepage": "https://github.com/kmoe/signal-demo#readme",
+  "dependencies": {
+    "ndef": "^0.1.2",
+    "pn532": "^0.1.0",
+    "request": "^2.72.0",
+    "serialport": "^3.1.2"
+  }
+}
